@@ -1,0 +1,23 @@
+{
+  "name": "todo-api",
+  "version": "1.0.0",
+  "description": "A blazing fast REST APIs with Node.js, MongoDB, Fastify and Swagger.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "r0mmm4k",
+  "license": "ISC",
+  "dependencies": {
+    "boom": "^7.2.2",
+    "dotenv": "^8.1.0",
+    "fastify": "^1.13.0",
+    "fastify-mongodb": "^0.9.1",
+    "fastify-swagger": "^0.15.3",
+    "mongoose": "^5.3.14"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  }
+}
