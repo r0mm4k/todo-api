@@ -21,6 +21,7 @@ fastify.register(require('fastify-swagger'), swagger.options);
 // Connect to DB
 const user = process.env.MONGODB_USER;
 const pass = process.env.MONGODB_PASS;
+const PORT = process.env.PORT || 3000;
 
 mongoose.connect(`mongodb+srv://${user}:${pass}@todo-api-mpqwn.azure.mongodb.net/todo-api`, {useNewUrlParser: true})
 	.then(() => console.log('MongoDB connected...'))
@@ -34,7 +35,7 @@ routes.forEach((route, index) => {
 // Run the server!
 const start = async () => {
 	try {
-		await fastify.listen(3000, '0.0.0.0');
+		await fastify.listen(PORT, '0.0.0.0');
 		fastify.swagger();
 		fastify.log.info(`server listening on ${fastify.server.address().port}`)
 	} catch (err) {
