@@ -18,6 +18,13 @@ const swagger = require('./config/swagger');
 // Register Swagger
 fastify.register(require('fastify-swagger'), swagger.options);
 
+// Register CORS
+fastify.register(require('fastify-cors'), {
+	'Access-Control-Allow-Origin': '*',
+	'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE',
+	'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+});
+
 // Connect to DB
 const user = process.env.MONGODB_USER;
 const pass = process.env.MONGODB_PASS;
