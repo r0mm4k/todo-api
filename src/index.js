@@ -21,8 +21,8 @@ fastify.register(require('fastify-swagger'), swagger.options);
 // Register CORS
 fastify.register(require('fastify-cors'), {
 	origin: 'https://todo-r0mm4k.netlify.com/',
-	methods:  ['GET', 'PUT', 'POST', 'DELETE'],
-	allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept']
+	methods:  'GET, PUT, POST, DELETE',
+	allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept'
 });
 
 // Connect to DB
